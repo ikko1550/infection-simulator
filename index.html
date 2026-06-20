@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感染症の登園・登校目安シミュレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>感染症の登園・登校目安シミュレーター（β版）</h1>
+    
+    <p class="intro-text">
+        本シミュレーターは、保育施設や学校における感染症の登園・登校目安を自己確認するためのツールです。<br>
+        感染症と診断された場合は、本ガイドラインの目安を参考に、適切な療養と登園・登校の再開をご判断ください。保護者の皆様のご理解とご協力をお願いいたします。
+    </p>
+
+    <form id="simulatorForm">
+        <div class="form-group">
+            <label for="disease">感染症名</label>
+            <select id="disease" required>
+                <option value="">選択してください</option>
+                <!-- JSで動的に追加されます -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="onsetDate">発症日</label>
+            <input type="date" id="onsetDate" required>
+        </div>
+    </form>
+
+    <div class="result-box" id="resultBox" style="display: none;">
+        <h2>登園・登校の目安</h2>
+        <p id="guidelineText"></p>
+        <p id="calculatedDate" class="min-date"></p>
+        
+        <div class="characteristics-box">
+            <h3>主な特徴・症状</h3>
+            <p id="characteristicsText"></p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
